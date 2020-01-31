@@ -1,0 +1,4 @@
+### trial 1 arc ###
+library(tidyverse)
+df <- list.files(path = '/Users/yinqi/Downloads', pattern = '*intrusions_MAT.csv', full.names = TRUE) %>% tibble(filename = .) %>% mutate(file_contents = map(filename, ~read_csv(.))) %>% unnest()
+library(devtools)
