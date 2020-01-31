@@ -5,9 +5,12 @@ library(devtools)
 install_github('gastonstat/arcdiagram')
 library(arcdiagram)
 
-df <- list.files(path = '/Users/yinqi/Downloads', pattern = '*intrusions_MAT.csv', full.names = TRUE) %>% tibble(filename = .) %>% mutate(file_contents = map(filename, ~read_csv(.))) %>% unnest()
+df <- list.files(path = '/Users/yinqi/Downloads/intrusions', pattern = '*.csv', full.names = TRUE) %>% tibble(filename = .) %>% mutate(file_contents = map(filename, ~read_csv(.))) %>% unnest() %>% select(-filename,-X7,-X8,-X9,X10,X11,X12,X13,X14,X15,16)
 
-### left join ###
+## OR
+df <- list.files(path = '/Users/yinqi/Downloads/intrusions', pattern = '*.csv', full.names = TRUE) %>% tibble(filename = .) %>% mutate(file_contents = map(filename, ~read_csv(.))) %>% unnest() %>% select(-filename)
+df <- subset(df, select = -c(X7:X16))
+
+### clean ###
+## merge
 df <- df %>% left_join(YOOOOOOOOO DONT FORGET, by = "trial")
-
-## counterbalance summary dont forget
