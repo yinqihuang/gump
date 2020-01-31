@@ -1,4 +1,13 @@
-### trial 1 arc ###
+### neat ###
 library(tidyverse)
-df <- list.files(path = '/Users/yinqi/Downloads', pattern = '*intrusions_MAT.csv', full.names = TRUE) %>% tibble(filename = .) %>% mutate(file_contents = map(filename, ~read_csv(.))) %>% unnest()
+install.packages("devtools")
 library(devtools)
+install_github('gastonstat/arcdiagram')
+library(arcdiagram)
+
+df <- list.files(path = '/Users/yinqi/Downloads', pattern = '*intrusions_MAT.csv', full.names = TRUE) %>% tibble(filename = .) %>% mutate(file_contents = map(filename, ~read_csv(.))) %>% unnest()
+
+### left join ###
+df <- df %>% left_join(YOOOOOOOOO DONT FORGET, by = "trial")
+
+## counterbalance summary dont forget
