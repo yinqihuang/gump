@@ -21,7 +21,8 @@ cb <- list.files(path = '/Users/yinqi/Downloads', pattern = 'counterbalance', fu
 # reduce human error aka sleepy yinqi
 df <- df %>% left_join(cb, by = c('counterbalance', 'trial'))
 
-## remove cols 
-df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,lag,narrativeCross,cond))
+### hypertools ###
 
-### plot ###
+### arc ###
+## remove text 
+df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,lag,narrativeCross,cond))
