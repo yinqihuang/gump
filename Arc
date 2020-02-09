@@ -12,7 +12,7 @@ df <- list.files(path = '/Users/yinqi/Downloads/intrusions', pattern = '*.csv', 
 df <- subset(df, select = -c(X7:X16))
 
 ## read condition file
-# why did it change from df to value WHY
+# why did it change from DATA to value WHY
 cb <- list.files(path = '/Users/yinqi/Downloads', pattern = 'counterbalance', full.names = TRUE) %>% tibble(filename = .) %>% mutate(file_contents = map(filename, ~ read_csv(.))) %>% unnest()
 cb <- list.files(path = '/Users/yinqi/Downloads', pattern = 'counterbalance', full.names = TRUE) %>% tibble(filename = .) %>% mutate(file_contents = map(filename, ~ read_csv(.))) %>% unnest() %>% mutate(filename = case_when(str_detect(filename, "counterbalance"))) ~ str_remove(filename, "/Users/yinqi/Downloads/counterbalance", TRUE ~ NA_character_)
 
