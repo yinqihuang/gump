@@ -1,4 +1,8 @@
 #### neat ####
+# set relative path
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
+
+# yay
 library(tidyverse)
 library(purrr)
 library(rlang)
