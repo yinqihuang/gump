@@ -24,6 +24,6 @@ df <- df %>% left_join(cb, by = c('counterbalance', 'trial'))
 ## remove text 
 df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,lag,narrativeCross,cond))
 ## calculate radius based on the distance between nodes
-
+geom_edge_arc ()
 
 #### hypertools ####
