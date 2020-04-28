@@ -4,6 +4,12 @@ setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 
 # yay
 library(tidyverse)
+library(viridis)
+library(patchwork)
+library(hrbrthemes)
+library(igraph)
+library(ggraph)
+library(colormap)
 
 ## read intrusion file
 df <- list.files(path = '/Users/yinqi/Downloads/intrusions', pattern = '*.csv', full.names = TRUE) %>% tibble(filename = .) %>% mutate(file_contents = map(filename, ~read_csv(.))) %>% unnest() %>% select(-filename,-X7,-X8,-X9,-X10,-X11,-X12,-X13,-X14,-X15,-X16)
