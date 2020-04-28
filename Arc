@@ -33,7 +33,7 @@ df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,l
 ## calculate radius based on the distance between nodes >> geom_edge_arc ()
 
 ## create edge list
-
+list=data.frame(source=c('df','intrusionEvent'), target=c('df','event'))
 
 
 #### hypertools ####
