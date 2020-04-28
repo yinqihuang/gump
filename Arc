@@ -33,7 +33,7 @@ df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,l
 ## calculate radius based on the distance between nodes >> geom_edge_arc ()
 
 ## create edge list
-list=data.frame(source=c('df','intrusionEvent'), target=c('df','event'))
+list = df (source(df,local = TRUE, 'intrusionEvent'), target(df, local = TRUE, 'event'))
 
 ## convert to igraph
 graph <- graph_from_data_frame(list)
