@@ -32,7 +32,7 @@ df <- df %>% left_join(cb, by = c('counterbalance', 'trial'))
 df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,lag,narrativeCross,cond))
 
 ## construct matrix
-df <- matrix(df,ncol = 2)
+df <- matrix(df, nrow = 3255, ncol = 2)
 
 ## create edge list
 
