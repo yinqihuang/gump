@@ -30,13 +30,10 @@ df <- df %>% left_join(cb, by = c('counterbalance', 'trial'))
 #### arc ####
 ## remove text 
 df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,lag,narrativeCross,cond))
-## calculate radius based on the distance between nodes >> geom_edge_arc ()
 
 ## create edge list
-# HELP
-list = df (source(df,local = TRUE,echo = TRUE, 'intrusionEvent'), target(df, 'event'))
 
 ## convert to igraph
 graph <- graph_from_data_frame(list)
 
-#### hypertools ####
+#### text analysis ####
