@@ -31,7 +31,11 @@ df <- df %>% left_join(cb, by = c('counterbalance', 'trial'))
 ## remove text 
 df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,lag,narrativeCross,cond))
 
+## construct matrix
+df <- matrix(df,ncol = 2)
+
 ## create edge list
+
 
 ## convert to igraph
 graph <- graph_from_data_frame(list)
