@@ -32,8 +32,8 @@ df <- df %>% left_join(cb, by = c('counterbalance', 'trial'))
 df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,lag,narrativeCross,cond))
 
 ## duplicate
-intru <- subset(df, select = -c(event))
-event <- subset(df, select = -c(intrusionEvent))
+intru <- df[,1]
+event <- df[,2]
 
 ## construct matrix
 df <- matrix(df, nrow = 3255, ncol = 2)
