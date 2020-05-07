@@ -42,6 +42,14 @@ df <- matrix(df, nrow = 3255, ncol = 2)
 
 ## convert to igraph
 mygraph <- graph_from_data_frame(df)
+
+## prepare vector of color
+mycolor <- colormap(colormap = colormaps$viridis, nshades = 83)
+mycolor <- sample(mycolor, length(mycolor))
+
+## arrange nodes
+
+
 p1 <-  ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="grey", edge_alpha=0.3, edge_width=0.2) + geom_node_point( color="black", size=0.3) + geom_node_text( aes(label=name), repel = TRUE, size=3, color="black")
 
 #### text analysis ####
