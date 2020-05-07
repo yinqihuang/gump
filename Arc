@@ -38,10 +38,10 @@ event <- df[,2]
 ## construct matrix
 df <- matrix(df, nrow = 3255, ncol = 2)
 
-## create edge list
-
+## create edge list (no need its just a df)
 
 ## convert to igraph
-graph <- graph_from_data_frame(list)
+mygraph <- graph_from_data_frame(df)
+plot <- ggraph(mygraph, layout="linear") + ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="gray", edge_alpha=0.3, edge_width=0.2) + geom_node_point( color="black", size=5)
 
 #### text analysis ####
