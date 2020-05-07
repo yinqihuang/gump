@@ -42,6 +42,6 @@ df <- matrix(df, nrow = 3255, ncol = 2)
 
 ## convert to igraph
 mygraph <- graph_from_data_frame(df)
-arc <- ggraph(mygraph, layout="linear") + ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="gray", edge_alpha=0.3, edge_width=0.2) + geom_node_point( color="black", size=5)
+arc <- ggraph(mygraph, layout="linear") + ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="gray", edge_alpha=0.3, edge_width=0.2) + geom_node_point( color="black", size=0.3)
 
 #### text analysis ####
