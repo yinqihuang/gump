@@ -1,3 +1,5 @@
+### arc (vis) - correlation & semantic
+
 #### neat ####
 # set relative path
 setwd(dirname(rstudioapi::getSourceEditorContext()$path))
@@ -53,3 +55,4 @@ mycolor <- sample(mycolor, length(mycolor))
 p1 <-  ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="grey", edge_alpha=0.3, edge_width=0.2) + geom_node_point( color="black", size=0.3) + geom_node_text( aes(label=name), repel = TRUE, size=3, color="black")
 
 #### text analysis ####
+## try this: http://jalammar.github.io/illustrated-word2vec/
