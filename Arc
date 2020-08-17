@@ -1,4 +1,4 @@
-### arc (vis) - correlation & semantic
+### arc (vis)/ network diagram - correlation & semantic
 
 #### neat ####
 # set relative path
