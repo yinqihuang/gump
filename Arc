@@ -34,8 +34,8 @@ df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,l
 
 ## create edge list (no need its just a df)
 
-## arrange nodes: arrange
-## direction matters: add arrow = arrow
+## arrange nodes: arrange = 
+## direction matters: arrow = arrow
 ## merge lines based on counts
 df <- df %>% group_by(intrusionEvent, event) %>% summarise(weight = n())
 
