@@ -48,7 +48,7 @@ df <- df %>% group_by(intrusionEvent, event) %>% summarise(weight = n())
 
 ## convert to igraph
 mygraph <- graph_from_data_frame(df)
-p1 <-  ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="grey", edge_alpha=0.3, edge_width=0.2, fold = TRUE, end_cap = circle(0.2, 'cm'), start_cap = circle(0.2, 'cm')) + geom_node_point(color="black", size=0.3) + geom_node_text(aes(label=name), size=3, color="black", nudge_y = -0.5)
+p1 <-  ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="grey", edge_alpha=0.3, edge_width=0.2, fold = TRUE, end_cap = circle(0.2, 'cm'), start_cap = circle(0.2, 'cm')) + geom_node_point(color="black", size=0.3) + geom_node_text(aes(label=name), size=3, color="black", nudge_y = -0.5) + geom_edge_link(alpha = .25, aes(width = weight))
 
 #### correlation ####
 intru <- df[,1]
