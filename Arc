@@ -33,13 +33,6 @@ df <- df %>% left_join(cb, by = c('counterbalance', 'trial'))
 ## remove text 
 df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,lag,narrativeCross,cond))
 
-## duplicate
-intru <- df[,1]
-event <- df[,2]
-
-## construct matrix
-df <- matrix(df, nrow = 3255, ncol = 2)
-
 ## create edge list (no need its just a df)
 
 ## convert to igraph
@@ -50,9 +43,10 @@ mycolor <- colormap(colormap = colormaps$viridis, nshades = 83)
 mycolor <- sample(mycolor, length(mycolor))
 
 ## arrange nodes
+## direction matters: add arrow = arrow
 ## merge lines based on counts
-## direction matters
-p1 <-  ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="grey", edge_alpha=0.3, edge_width=0.2, fold = TRUE, end_cap = circle(0.2, 'cm'), start_cap = circle(0.2, 'cm')) + geom_node_point(color="black", size=0.3) + geom_node_text(aes(label=name), repel = TRUE, size=3, color="black")
+## group them by narratives
+p1 <-  ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="grey", edge_alpha=0.3, edge_width=0.2, fold = TRUE, end_cap = circle(0.2, 'cm'), start_cap = circle(0.2, 'cm')) + geom_node_point(color="black", size=0.3) + geom_node_text(aes(label=name), size=3, color="black", nudge_y = -0.5)
 
 #### text analysis ####
 ## try http://jalammar.github.io/illustrated-word2vec/
