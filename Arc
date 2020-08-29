@@ -16,8 +16,8 @@ library(colormap)
 ## read intrusion file
 df <- list.files(path = '/Users/yinqi/Downloads/intrusions', pattern = '*.csv', full.names = TRUE) %>% tibble(filename = .) %>% mutate(file_contents = map(filename, ~read_csv(.))) %>% unnest() %>% select(-filename,-X7,-X8,-X9,-X10,-X11,-X12,-X13,-X14,-X15,-X16)
 # OR
-df <- list.files(path = '/Users/yinqi/Downloads/intrusions', pattern = '*.csv', full.names = TRUE) %>% tibble(filename = .) %>% mutate(file_contents = map(filename, ~read_csv(.))) %>% unnest() %>% select(-filename)
-df <- subset(df, select = -c(X7:X16))
+# df <- list.files(path = '/Users/yinqi/Downloads/intrusions', pattern = '*.csv', full.names = TRUE) %>% tibble(filename = .) %>% mutate(file_contents = map(filename, ~read_csv(.))) %>% unnest() %>% select(-filename)
+# df <- subset(df, select = -c(X7:X16))
 
 ## read condition file
 # be careful of the orientation of /
@@ -51,8 +51,8 @@ df <- df %>% group_by(intrusionEvent, event) %>% summarise(weight = n())
 # - SKIP - 
 ## group them by narratives
 ## prepare vector of color
-#mycolor <- colormap(colormap = colormaps$viridis, nshades = 83)
-#mycolor <- sample(mycolor, length(mycolor))
+# mycolor <- colormap(colormap = colormaps$viridis, nshades = 83)
+# mycolor <- sample(mycolor, length(mycolor))
 ## give narratives different color
 
 ## convert to igraph
