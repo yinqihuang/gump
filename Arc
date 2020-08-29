@@ -32,6 +32,14 @@ df <- df %>% left_join(cb, by = c('counterbalance', 'trial'))
 ## remove text 
 df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,lag,narrativeCross,cond))
 
+#### chisq ####
+# intru <- df[,1]
+# event <- df[,2]
+# ma <- data.matrix (df)
+# result <- (chisq.test(ma, ncol(2)))
+# Error in chisq.test(ma, ncol(2)) : 
+# all entries of 'x' must be nonnegative and finite
+
 ## create edge list (no need its just a df)
 
 ## arrange nodes: arrange = 
@@ -51,11 +59,6 @@ df <- df %>% group_by(intrusionEvent, event) %>% summarise(weight = n())
 ## convert to igraph
 mygraph <- graph_from_data_frame(df)
 p1 <-  ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="grey", edge_alpha=0.3, fold = TRUE, end_cap = circle(0.2, 'cm'), start_cap = circle(0.2, 'cm'), aes(width = weight)) + geom_node_point(color="black", size=0.3) + geom_node_text(aes(label=name), size=3, color="black", nudge_y = -0.5)
-
-#### correlation ####
-#intru <- df[,1]
-#event <- df[,2]
-cor(df, use = "complete.obs", method = c("pearson"))
 
 #### text analysis ####
 ## try http://jalammar.github.io/illustrated-word2vec/
