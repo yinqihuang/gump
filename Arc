@@ -24,7 +24,6 @@ df <- subset(df, select = -c(X7:X16))
 # make sure to rename filename so the two dfs match
 cb <- list.files(path = '/Users/yinqi/Downloads', pattern = 'counterbalance', full.names = TRUE) %>% tibble(filename = .) %>% mutate(file_contents = map(filename, ~ read_csv(.))) %>% unnest() %>% mutate(filename = case_when(str_detect(filename, "counterbalance") ~ str_remove(filename, "Users(.*)/counterbalance")), filename = str_remove(filename, ".csv"), filename = str_remove(filename, "/")) %>% select(-imgStim) %>% rename(counterbalance = filename)
 
-#### arc ####
 ## merge dfs
 # reduce human error aka sleepy yinqi
 df <- df %>% left_join(cb, by = c('counterbalance', 'trial'))
@@ -40,6 +39,7 @@ df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,l
 # Error in chisq.test(ma, ncol(2)) : 
 # all entries of 'x' must be nonnegative and finite
 
+#### arc ####
 ## create edge list (no need its just a df)
 
 ## arrange nodes: arrange = 
@@ -47,7 +47,6 @@ df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,l
 ## merge lines based on counts
 df <- df %>% group_by(intrusionEvent, event) %>% summarise(weight = n())
 # 13 19 26 34 59 68 71 72 76 82 83
-
 
 # - SKIP - 
 ## group them by narratives
