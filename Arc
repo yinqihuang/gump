@@ -46,6 +46,7 @@ df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,l
 ## direction matters: arrow = arrow
 ## merge lines based on counts
 df <- df %>% group_by(intrusionEvent, event) %>% summarise(weight = n())
+# NA????
 # 13 19 26 34 59 68 71 72 76 82 83
 
 # - SKIP - 
