@@ -34,10 +34,8 @@ df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,l
 #### chisq ####
 # intru <- df[,1]
 # event <- df[,2]
-# ma <- data.matrix (df)
-# result <- (chisq.test(ma, ncol(2)))
-# Error in chisq.test(ma, ncol(2)) : 
-# all entries of 'x' must be nonnegative and finite
+tbl <- table(df)
+result <- (chisq.test(tbl))
 
 #### arc ####
 ## create edge list (no need its just a df)
