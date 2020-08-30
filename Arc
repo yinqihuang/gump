@@ -49,6 +49,7 @@ print(result)
 # 13 19 26 34 59 68 71 72 76 82 83
 # OR
 tbl <- as.data.frame(tbl)
+tbl <- subset(tbl, Freq >= 100)
 
 # - SKIP - 
 ## group them by narratives
@@ -58,8 +59,8 @@ tbl <- as.data.frame(tbl)
 ## give narratives different color
 
 ## convert to igraph
-mygraph <- graph_from_data_frame(df)
-p1 <-  ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="grey", edge_alpha=0.3, fold = TRUE, end_cap = circle(0.2, 'cm'), start_cap = circle(0.2, 'cm'), aes(width = weight)) + geom_node_point(color="black", size=0.3) + geom_node_text(aes(label=name), size=3, color="black", nudge_y = -0.5)
+mygraph <- graph_from_data_frame(tbl)
+p1 <-  ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="grey", edge_alpha=0.3, fold = TRUE, end_cap = circle(0.2, 'cm'), start_cap = circle(0.2, 'cm'), aes(width = Freq)) + geom_node_point(color="black", size=0.3) + geom_node_text(aes(label=name), size=3, color="black", nudge_y = -0.5)
 
 #### text analysis ####
 ## try http://jalammar.github.io/illustrated-word2vec/
