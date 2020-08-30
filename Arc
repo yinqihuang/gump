@@ -1,4 +1,4 @@
-### arc (vis)/ network diagram - correlation & semantic
+### arc - chi square & semantic
 
 #### neat ####
 ## set relative path
@@ -49,7 +49,7 @@ print(result)
 # 13 19 26 34 59 68 71 72 76 82 83
 # OR
 tbl <- as.data.frame(tbl)
-tbl <- subset(tbl, Freq >= 100)
+tbl <- subset(tbl, Freq >= 100) #100 is arbitrary
 
 # - SKIP - 
 ## group them by narratives
