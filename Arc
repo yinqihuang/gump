@@ -36,6 +36,7 @@ df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,l
 # event <- df[,2]
 tbl <- table(df)
 result <- (chisq.test(tbl))
+print(result)
 
 #### arc ####
 ## create edge list (no need its just a df)
@@ -43,9 +44,11 @@ result <- (chisq.test(tbl))
 ## arrange nodes: arrange = 
 ## direction matters: arrow = arrow
 ## merge lines based on counts
-df <- df %>% group_by(intrusionEvent, event) %>% summarise(weight = n())
+# df <- df %>% group_by(intrusionEvent, event) %>% summarise(weight = n())
 # NA????
 # 13 19 26 34 59 68 71 72 76 82 83
+# OR
+tbl <- as.data.frame(tbl)
 
 # - SKIP - 
 ## group them by narratives
