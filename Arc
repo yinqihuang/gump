@@ -42,6 +42,7 @@ print(result)
 ## create edge list (no need its just a df)
 
 ## arrange nodes: arrange = 
+# oops now its two separate cols
 ## direction matters: arrow = arrow
 ## merge lines based on counts
 # df <- df %>% group_by(intrusionEvent, event) %>% summarise(weight = n())
