@@ -31,6 +31,10 @@ df <- df %>% left_join(cb, by = c('counterbalance', 'trial'))
 ## remove text 
 df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,lag,narrativeCross,cond))
 
+#### survival analysis ####
+## left censoring
+## try: https://rviews.rstudio.com/2017/09/25/survival-analysis-with-r/
+
 #### chisq ####
 # intru <- df[,1]
 # event <- df[,2]
@@ -54,12 +58,16 @@ tbl <- subset(tbl, Freq >= 100) #100 is arbitrary
 # - SKIP - 
 ## group them by narratives
 # 13 19 26 34 59 68 71 72 76 82 83
-# try if else if
-# label nodes
+
 ## prepare vector of color
 # mycolor <- colormap(colormap = colormaps$viridis, nshades = 83)
 # mycolor <- sample(mycolor, length(mycolor))
-## give narratives different color
+
+# try if else if
+# label nodes
+#
+
+
 
 ## convert to igraph
 mygraph <- graph_from_data_frame(tbl)
