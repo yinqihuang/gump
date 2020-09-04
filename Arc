@@ -31,7 +31,7 @@ df <- df %>% left_join(cb, by = c('counterbalance', 'trial'))
 ## remove text 
 df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,lag,narrativeCross,cond))
 
-#### survival analysis ####
+#### survival analysis #### 
 ## left censoring
 ## try: https://rviews.rstudio.com/2017/09/25/survival-analysis-with-r/
 
@@ -54,7 +54,7 @@ print(result)
 ## create edge list (no need its just a df)
 
 ## arrange nodes: tbl <- tbl %>% arrange(intrusionEvent, event)
-# oops now its two separate cols
+# HELP oops now its two separate cols
 
 ## direction matters: arrow = arrow ()
 ## merge lines based on counts
@@ -79,7 +79,7 @@ p1 <-  ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="grey", edge
 ## try if else if
 # p1 <-  ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="grey", edge_alpha=0.3, fold = TRUE, end_cap = circle(0.2, 'cm'), start_cap = circle(0.2, 'cm'), aes(width = Freq)) + geom_node_point(if (node <= 13) {color = "red"} else if (node <= 19) {color = "orange"} else if (node <= 26) {color = "yellow"} else if (node <= 34) {color = "pink"} else if (node <= 59) {color = "green"} else if (node <= 68) {color = "blue"} else if (node <= 71) {color = "purple"} else if (node <= 72) {color = "gray"} else if (node <= 76) {color = "red"} else if (node <= 82) {color = "orange"} else {color = "yellow"}, size=0.3) + geom_node_text(aes(label=name), size=3, color="black", nudge_y = -0.5)
 # Error in as.list(aes1) : object 'node' not found
-# label nodes
+# HELP label nodes
 
 #### text analysis ####
 ## try http://jalammar.github.io/illustrated-word2vec/
