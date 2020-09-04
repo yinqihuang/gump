@@ -35,6 +35,14 @@ df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,l
 ## left censoring
 ## try: https://rviews.rstudio.com/2017/09/25/survival-analysis-with-r/
 
+#### matrix ####
+## try: http://www.r-tutor.com/r-introduction/matrix/matrix-construction
+# A1 > 1,2 ... 83 OR
+# A1, B1 ... A60 > 1 (merge participants)
+
+#### pca ####
+# try: https://www.datacamp.com/community/tutorials/pca-analysis-r?utm_source=adwords_ppc&utm_campaignid=898687156&utm_adgroupid=48947256715&utm_device=c&utm_keyword=&utm_matchtype=b&utm_network=g&utm_adpostion=&utm_creative=229765585186&utm_targetid=aud-299261629574:dsa-429603003980&utm_loc_interest_ms=&utm_loc_physical_ms=9061009&gclid=Cj0KCQjwy8f6BRC7ARIsAPIXOjhGP9mcV78rSqpm8CwOxs_2GcaB57QZBKneqqkPDBRKc40w1wMy6LgaAgn-EALw_wcB
+
 #### chisq ####
 # intru <- df[,1]
 # event <- df[,2]
@@ -45,9 +53,10 @@ print(result)
 #### arc ####
 ## create edge list (no need its just a df)
 
-## arrange nodes: arrange = 
+## arrange nodes: tbl <- tbl %>% arrange(intrusionEvent, event)
 # oops now its two separate cols
-## direction matters: arrow = arrow
+
+## direction matters: arrow = arrow ()
 ## merge lines based on counts
 # df <- df %>% group_by(intrusionEvent, event) %>% summarise(weight = n())
 # where does NA come from????
@@ -56,22 +65,21 @@ tbl <- as.data.frame(tbl)
 tbl <- subset(tbl, Freq >= 100) #100 is arbitrary
 
 # - SKIP - 
-## group them by narratives
-# 13 19 26 34 59 68 71 72 76 82 83
-
 ## prepare vector of color
 # mycolor <- colormap(colormap = colormaps$viridis, nshades = 83)
 # mycolor <- sample(mycolor, length(mycolor))
 
-# try if else if
-# label nodes
-#
-
-
-
 ## convert to igraph
 mygraph <- graph_from_data_frame(tbl)
 p1 <-  ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="grey", edge_alpha=0.3, fold = TRUE, end_cap = circle(0.2, 'cm'), start_cap = circle(0.2, 'cm'), aes(width = Freq)) + geom_node_point(color="black", size=0.3) + geom_node_text(aes(label=name), size=3, color="black", nudge_y = -0.5)
+
+## group them by narratives
+# 13 19 26 34 59 68 71 72 76 82 83
+
+## try if else if
+# p1 <-  ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="grey", edge_alpha=0.3, fold = TRUE, end_cap = circle(0.2, 'cm'), start_cap = circle(0.2, 'cm'), aes(width = Freq)) + geom_node_point(if (node <= 13) {color = "red"} else if (node <= 19) {color = "orange"} else if (node <= 26) {color = "yellow"} else if (node <= 34) {color = "pink"} else if (node <= 59) {color = "green"} else if (node <= 68) {color = "blue"} else if (node <= 71) {color = "purple"} else if (node <= 72) {color = "gray"} else if (node <= 76) {color = "red"} else if (node <= 82) {color = "orange"} else {color = "yellow"}, size=0.3) + geom_node_text(aes(label=name), size=3, color="black", nudge_y = -0.5)
+# Error in as.list(aes1) : object 'node' not found
+# label nodes
 
 #### text analysis ####
 ## try http://jalammar.github.io/illustrated-word2vec/
