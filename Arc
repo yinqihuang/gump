@@ -54,12 +54,12 @@ print(result)
 ## create edge list (no need its just a df)
 
 ## arrange nodes: tbl <- tbl %>% arrange(intrusionEvent, event)
-# HELP oops now its two separate cols
+# CORN oops now its two separate cols
 
 ## direction matters: arrow = arrow ()
 ## merge lines based on counts
 # df <- df %>% group_by(intrusionEvent, event) %>% summarise(weight = n())
-# where does NA come from????
+# CORN where does NA come from????
 # OR
 tbl <- as.data.frame(tbl)
 tbl <- subset(tbl, Freq >= 100) #100 is arbitrary
@@ -79,7 +79,7 @@ p1 <-  ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="grey", edge
 ## try if else if
 # p1 <-  ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="grey", edge_alpha=0.3, fold = TRUE, end_cap = circle(0.2, 'cm'), start_cap = circle(0.2, 'cm'), aes(width = Freq)) + geom_node_point(if (node <= 13) {color = "red"} else if (node <= 19) {color = "orange"} else if (node <= 26) {color = "yellow"} else if (node <= 34) {color = "pink"} else if (node <= 59) {color = "green"} else if (node <= 68) {color = "blue"} else if (node <= 71) {color = "purple"} else if (node <= 72) {color = "gray"} else if (node <= 76) {color = "red"} else if (node <= 82) {color = "orange"} else {color = "yellow"}, size=0.3) + geom_node_text(aes(label=name), size=3, color="black", nudge_y = -0.5)
 # Error in as.list(aes1) : object 'node' not found
-# HELP label nodes
+# CORN label nodes
 
 #### text analysis ####
 ## try http://jalammar.github.io/illustrated-word2vec/
