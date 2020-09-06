@@ -34,10 +34,9 @@ df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,l
 #### survival #### 
 ## left censoring
 ## try: https://rviews.rstudio.com/2017/09/25/survival-analysis-with-r/
-# need 
+# need to comfirm whether they watched it or not & date
 
 #### clustering ####
-
 ## matrix
 # try: http://www.r-tutor.com/r-introduction/matrix/matrix-construction
 # A1 > 1,2 ... 83 OR
