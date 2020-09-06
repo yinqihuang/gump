@@ -31,17 +31,24 @@ df <- df %>% left_join(cb, by = c('counterbalance', 'trial'))
 ## remove text 
 df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,lag,narrativeCross,cond))
 
-#### survival analysis #### 
+#### survival #### 
 ## left censoring
 ## try: https://rviews.rstudio.com/2017/09/25/survival-analysis-with-r/
+# need 
 
-#### matrix ####
-## try: http://www.r-tutor.com/r-introduction/matrix/matrix-construction
+#### clustering ####
+
+## matrix
+# try: http://www.r-tutor.com/r-introduction/matrix/matrix-construction
 # A1 > 1,2 ... 83 OR
 # A1, B1 ... A60 > 1 (merge participants)
 
-#### pca ####
-# try: https://www.datacamp.com/community/tutorials/pca-analysis-r?utm_source=adwords_ppc&utm_campaignid=898687156&utm_adgroupid=48947256715&utm_device=c&utm_keyword=&utm_matchtype=b&utm_network=g&utm_adpostion=&utm_creative=229765585186&utm_targetid=aud-299261629574:dsa-429603003980&utm_loc_interest_ms=&utm_loc_physical_ms=9061009&gclid=Cj0KCQjwy8f6BRC7ARIsAPIXOjhGP9mcV78rSqpm8CwOxs_2GcaB57QZBKneqqkPDBRKc40w1wMy6LgaAgn-EALw_wcB
+## artificial neural network
+# try: https://www.datacamp.com/community/tutorials/neural-network-models-r
+
+#### ??? ####
+# prediction - observation = frequency $ n $ parameters
+# look for n-min
 
 #### chisq ####
 # intru <- df[,1]
