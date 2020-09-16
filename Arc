@@ -33,14 +33,13 @@ df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,l
 
 #### survival #### 
 ## left censoring
-## try: https://rviews.rstudio.com/2017/09/25/survival-analysis-with-r/
-# need to comfirm whether they watched it or not & date
+# Q: first exposure unclear > missing 
 
 #### clustering ####
 ## freq
 # sort freq to get the top 5 for each event
 
-## matrix
+## matrix WHY??
 # try: http://www.r-tutor.com/r-introduction/matrix/matrix-construction
 # A1 > 1,2 ... 83 OR
 # A1, B1 ... A60 > 1 (merge participants)
@@ -56,8 +55,8 @@ df <- subset(df, select = -c(subID,trial,counterbalance,testTime,intrusionText,l
 ## use correlation from frequency, map it back to the eight variable
 # OR
 ## date from http://studyforrest.org/data.html
-## pca combined all 8 categories > can generate one new category
-# need to assign value for all 8 categories
+## pca combined all 8 dims > can generate one new category
+# need to score all of them
 ## do it within a group so the pca can explain the intrusion happening within that group
 ## eg., for lag vs event boundary that 4 conditions: eg., short lag cross boundaries, intrusion can be explained by 80% of temporal, 10% of semantic, 10% of emotional
 
@@ -80,7 +79,8 @@ print(result)
 ## direction matters: arrow = arrow ()
 ## merge lines based on counts
 # df <- df %>% group_by(intrusionEvent, event) %>% summarise(weight = n())
-# CORN where does NA come from????
+# is.na (df)
+# CORN need an argument to remove all True
 # OR
 tbl <- as.data.frame(tbl)
 tbl <- subset(tbl, Freq >= 100) #100 is arbitrary
