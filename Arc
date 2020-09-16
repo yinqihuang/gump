@@ -79,8 +79,10 @@ print(result)
 ## direction matters: arrow = arrow ()
 ## merge lines based on counts
 # df <- df %>% group_by(intrusionEvent, event) %>% summarise(weight = n())
+# why NA? Coerce?
 # is.na (df)
 # CORN need an argument to remove all True
+
 # OR
 tbl <- as.data.frame(tbl)
 tbl <- subset(tbl, Freq >= 100) #100 is arbitrary
