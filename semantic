@@ -10,3 +10,7 @@ A = "The introduction scene where, um, the camera is panning onto his dirty Nike
 B = A.lower()
 C = B.split()
 print (C)
+
+## try http://jalammar.github.io/illustrated-word2vec/
+## try https://github.com/stanfordnlp/GloVe
+## transcript available: http://studyforrest.org/pages/annot_speech.html
