@@ -101,8 +101,3 @@ p1 <-  ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="grey", edge
 # p1 <-  ggraph(mygraph, layout="linear") + geom_edge_arc(edge_colour="grey", edge_alpha=0.3, fold = TRUE, end_cap = circle(0.2, 'cm'), start_cap = circle(0.2, 'cm'), aes(width = Freq)) + geom_node_point(if (node <= 13) {color = "red"} else if (node <= 19) {color = "orange"} else if (node <= 26) {color = "yellow"} else if (node <= 34) {color = "pink"} else if (node <= 59) {color = "green"} else if (node <= 68) {color = "blue"} else if (node <= 71) {color = "purple"} else if (node <= 72) {color = "gray"} else if (node <= 76) {color = "red"} else if (node <= 82) {color = "orange"} else {color = "yellow"}, size=0.3) + geom_node_text(aes(label=name), size=3, color="black", nudge_y = -0.5)
 # Error in as.list(aes1) : object 'node' not found
 # CORN label nodes > name () <- c(1:83)
-
-#### text analysis ####
-## try http://jalammar.github.io/illustrated-word2vec/
-## try https://github.com/stanfordnlp/GloVe
-## transcript available: http://studyforrest.org/pages/annot_speech.html
