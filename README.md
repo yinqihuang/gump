@@ -14,7 +14,7 @@ Forrest Gump is a modern classic, so many participants came into the lab with pr
 We categorized the data into four memory types before proceeding to statistical analysis using a modified version of [Autobiographical Interview](https://psycnet.apa.org/record/2002-06812-014). A detailed explanation of our approach can be found [here](https://drive.google.com/file/d/1evNwjzXrLMWbc7vlZwrFxz0LD5B2G09j/view?usp=sharing) on page 3. We have a VBA script that counts the number of highlights if you are processing data in a word doc like us!
 
 ### Arc for Visualization
-I used arc diagram for this project as it nicely presents all the data points on a horizontal line (which is a good analogy of the timeline of the movie). An arc connects two correlated events, and its weight represents the strength of correlation. Here I use chi-square test to adjust the line weights, but you can replace it with any statistical tool that you want to use.
+I created *Arc* specifically for this project as it nicely presents all the data points on a horizontal line (which is a good analogy of the timeline of the movie). An arc connects two correlated events, and its weight represents the strength of correlation. Here I use chi-square test to adjust the line weights, but you can replace it with any statistical tool that you want to use.
 
 ## Statistical Analysis
 ### Linear Mixed Model
