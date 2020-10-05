@@ -6,7 +6,7 @@ This project was presented at *Context and Episodic Memory Symposium* and *Lake 
 ## Guide
 The README is organized in sequential order. I hope this can help streamline the process if you are also using **naturalistic stimuli** for your project.
 
-## Pre-process Data
+## Pre-processing Data
 ### Survival Analysis
 Forrest Gump is a modern classic, so many participants came into the lab with previous knowledge of the movie. This is a common issue dealing with naturalistic stimuli. To account for this, you can use **survival analysis** to pre-process the data. You will need to record the time when they expose to the stimulus to perform **left censoring**. If this information is not available (sometimes people don't remember when they first watched Forrest Gump), you will use **left truncation** to remove it from the dataset. A big enough sample size is the key!
 
