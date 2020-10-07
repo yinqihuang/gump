@@ -20,11 +20,8 @@ I created *Arc* specifically for this project as it nicely presents all the data
 ### Linear Mixed Model
 We are planning to release the script along with the data in 2021. A preview of our results can be found [here](https://drive.google.com/file/d/1evNwjzXrLMWbc7vlZwrFxz0LD5B2G09j/view?usp=sharing). Stay tuned for updates!
 
-### Principal Component Analysis [In Progress]
-On [studyforrest website](http://studyforrest.org/data.html), there are eight identified properties of the movie scenes: semantics, emotion, body contact, music, to name a few. I will be using this analysis to explore how much each of these properties contributes to the (re)consolidation of a particular scene. The results of this analysis can be hard to interpret, so you can also try **multiple regression** and **k-means clustering**.
-
 ### Semantic Analysis [In Progress]
-We are planning to use pre-trained natural language processing models such as [GloVe](https://github.com/stanfordnlp/GloVe) and [word2vec](http://jalammar.github.io/illustrated-word2vec/). The models essentially examine individual words, and thus considered as "context-free." I will be exploring [BERT](https://ai.googleblog.com/2018/11/open-sourcing-bert-state-of-art-pre.html) and its derivation [pQRNN](https://ai.googleblog.com/2020/09/advancing-nlp-with-efficient-projection.html) that capture the context around the words as a mini project for this part.
+We are planning to use pre-trained natural language processing models such as [word2vec](http://jalammar.github.io/illustrated-word2vec/) and [BERT](https://ai.googleblog.com/2018/11/open-sourcing-bert-state-of-art-pre.html) and its derivation [pQRNN](https://ai.googleblog.com/2020/09/advancing-nlp-with-efficient-projection.html).
 
 ## Acknowledgement
 Big thanks to [Bryan Hong](https://twitter.com/bryan_hong_) for being a supportive mentor! Special award goes to [Tianyu Lu](https://github.com/tianyu-lu) and [Ziyad Edher](https://github.com/ziyadedher) for writing the VBA script, and to Rui Liang, Michael Chen, [Adam Huang](https://github.com/meatMonkAdam), [Zhao Lian](https://github.com/zhaolian-devhaus), and Tianyu (thanks again!) for their support when I am exploring machine learning.
