@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*
-"""
-Spyder Editor
-
-This is a temporary script file.
-"""
-
 import pandas as pd
 
 file = pd.read_excel('153.xlsx')
