@@ -3,11 +3,10 @@ import pandas as pd
 dfs = []
 for i in range(1, 10):
     # print('av1o0{}.csv'.format(i))
-    filename = 'av1o0{}.csv'.format(i)
-    df = pd.read_csv(filename)
+    df = pd.read_csv(f'av1o0{i}.csv')
     df.insert(loc=0, column='observer', value=f'av1o0{i}')
     dfs.append(df)
-
+    
 # df1 = pd.read_csv('av1o01.csv')
 # df2 = pd.read_csv('av1o02.csv')
 # df3 = pd.read_csv('av1o03.csv')
